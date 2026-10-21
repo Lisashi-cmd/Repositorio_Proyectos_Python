@@ -1,5 +1,5 @@
-# 09-05 -> 27-05
-
+# 09-05 (Principio del Proyecto - Python)
+# 20-10 (Avances y Actualizaciones Proyecto - Python)
 # Main
 print("================================")
 print("     GESTOR DE TAREAS - v1.0")
@@ -9,17 +9,14 @@ nombre_usuario = input("Ingresa tu nombre: ")
 
 print(f"Bienvenido, {nombre_usuario}.")
 
-opcion = 0
-tareas = []
+opcion: int = 0
+tareas: list[str] = []
 
-# Cambios realizados el 25-05:
-# Funcion para crear una tarea, con validación de entrada vacía.
-# Función para ver tareas, con contador de tareas completadas y pendientes.
-# Marcar una tarea como pendiente, con validación de número de tarea.
-# Función para mostrar configuración, con opciones para cambiar nombre de usuario y tema (sin funcionalidad implementada).
+# Cambios realizados el 20-10:
+# Se agregaron type hints a las variables para mejorar la verificación estática de tipos. 
 
 
-def crear_tarea(lista):
+def crear_tarea(lista: list[str]):
     nombre_tarea = input("Ingrese una tarea: ")
 
     if nombre_tarea.strip() == "":
@@ -30,10 +27,10 @@ def crear_tarea(lista):
             "completada": False
         }
         lista.append(tarea)
-        print("tarea agregada correctamente.")
+        print("Tarea agregada correctamente.")
 
 
-def ver_tareas(lista):
+def ver_tareas(lista: list[str]):
     if not lista:
         print("No hay tareas cargadas.")
     else:
@@ -57,11 +54,11 @@ def ver_tareas(lista):
 
 def mostrar_configuracion():
     print("""
-    Configuración:
-
-    1. Cambiar nombre de usuario
-    2. Cambiar tema
-    3. Volver al menú principal
+    | \t Configuración:
+    |
+    | 1. Cambiar nombre de usuario
+    | 2. Cambiar tema
+    | 3. Volver al menú principal
     """)
 
 
@@ -143,7 +140,7 @@ while opcion != 7:
                         indice = num_tarea - 1
                         tareas.pop(indice)
                         print(
-                            f"Tarea eliminada."
+                            "Tarea eliminada."
                         )
                     else:
                         print("Número de tarea inválido.")
