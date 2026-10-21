@@ -1,7 +1,7 @@
 
-# Programa que funcione como una calculadora simple, pidiendo al usuario dos números y la operación que desea realizar (suma, resta, multiplicación o división) y luego mostrar el resultado.
+# Primer programa super sencillo, con la función de actuar como una Calculadora Simple.
 
-# Función para realizar la operación matemática:
+# Función para realizar las operaciones matemáticas:
 
 def calculadora(a, b, operacion):
     if operacion == "suma":
