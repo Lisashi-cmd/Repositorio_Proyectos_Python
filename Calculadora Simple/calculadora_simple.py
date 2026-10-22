@@ -1,6 +1,7 @@
+
 # Primer programa super sencillo, con la función de actuar como una Calculadora Simple.
 
-# Función para realizar la operación matemática:
+# Función para realizar las operaciones matemáticas:
 
 def calculadora(a: float, b: float, operacion: str):
     if operacion == "suma" or operacion == '+':
