@@ -1,16 +1,15 @@
-
 # Primer programa super sencillo, con la función de actuar como una Calculadora Simple.
 
 # Función para realizar las operaciones matemáticas:
 
-def calculadora(a, b, operacion):
-    if operacion == "suma":
+def calculadora(a: float, b: float, operacion: str):
+    if operacion == "suma" or operacion == '+':
         return a + b
-    elif operacion == "resta":
+    elif operacion == "resta" or operacion == '-':
         return a - b
-    elif operacion == "multiplicación":
+    elif operacion == "multiplicación" or operacion == '*':
         return a * b
-    elif operacion == "división":
+    elif operacion == "división" or operacion == '/':
         if b != 0:
             return a / b
         else:
@@ -20,13 +19,13 @@ def calculadora(a, b, operacion):
 
 
 while True:
-    print("""\n === Calculadora Simple ===
-- Ingrese dos números y la operación que desea realizar: 
+    print("""\n === Calculadora ===
+- Ingrese los números y la operación a realizar... 
     
-    + Suma
-    - Resta
-    *  Multiplicación
-    /  División
+    [+] - Suma
+    [-] - Resta
+    [*] - Multiplicación
+    [/] - División
           
  - Ingrese 'salir' para terminar el programa.
     """)
@@ -36,12 +35,14 @@ while True:
         numero1 = float(input("Ingrese el primer número: "))
         numero2 = float(input("Ingrese el segundo número: "))
         operacion_usuario = input(
-            "Ingrese la operación a realizar (suma, resta, multiplicación o división): ").lower()
+            "Ingrese una operación (segun nombre o signo de la misma):"
+            " | 1- suma '+'\n | 2- resta '-'\n | 3- multiplicación '*'\n | 4- división '/'\n").lower()
+        
         resultado = calculadora(numero1, numero2, operacion_usuario)
         print(f"El resultado de la {operacion_usuario} es: {resultado}")
     except ValueError:
         print("Por favor, ingrese un número válido.")
-        if input("¿Desea intentar de nuevo? (s/n): ").lower() != 's':
+        if input("¿Desea realizar otra operación? (s/n): ").lower() != 's':
             print("Saliendo del programa...")
             break
     except KeyboardInterrupt:
