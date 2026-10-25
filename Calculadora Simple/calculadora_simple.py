@@ -1,4 +1,3 @@
-
 # Primer programa super sencillo, con la función de actuar como una Calculadora Simple.
 
 # Función para realizar las operaciones matemáticas:
